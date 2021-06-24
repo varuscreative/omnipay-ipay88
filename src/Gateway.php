@@ -22,7 +22,8 @@ class Gateway extends AbstractGateway
         return [
             'merchantKey' => '',
             'merchantCode' => '',
-            'backendUrl' => ''
+            'backendUrl' => '',
+            'testMode' => false,
         ];
     }
 
@@ -54,6 +55,16 @@ class Gateway extends AbstractGateway
     public function setBackendUrl($backendUrl)
     {
         return $this->setParameter('backendUrl', $backendUrl);
+    }
+
+    public function getTestMode()
+    {
+        return $this->getParameter('testMode');
+    }
+
+    public function setTestMode($testMode)
+    {
+        return $this->setParameter('testMode', $testMode);
     }
 
     public function purchase(array $parameters = array())

@@ -18,7 +18,7 @@ class PurchaseRequest extends AbstractRequest
             'ProdDesc' => $this->getDescription(),
             'UserName' => $this->getCard()->getBillingName(),
             'UserEmail' => $this->getCard()->getEmail(),
-            'UserContact' => $this->getCard()->getNumber(),
+            'UserContact' => $this->getCard()->getBillingPhone(),
             'Remark' => '',
             'Lang' => '',
             'Signature' => $this->signature(
@@ -30,6 +30,7 @@ class PurchaseRequest extends AbstractRequest
             ),
             'ResponseURL' => $this->getReturnUrl(),
             'BackendURL' => $this->getBackendUrl(),
+            'testMode' => $this->getTestMode(),
         ];
     }
 

@@ -7,8 +7,6 @@ use Omnipay\Common\Message\AbstractResponse;
 
 class PurchaseResponse extends AbstractResponse
 {
-    protected $endpoint = 'https://www.mobile88.com/ePayment/entry.asp';
-
     public function getTransactionId()
     {
         return $this->data['RefNo'];
@@ -31,7 +29,12 @@ class PurchaseResponse extends AbstractResponse
 
     public function getRedirectUrl()
     {
-        return $this->endpoint;
+        if ($this->data['testMode']) {
+            $endpoint = 'https://sandbox.ipay88.com.kh:8468/epayment/entry.asp';
+        } else {
+            $endpoint = 'https://payment.ipay88.com.kh/epayment/entry.asp';
+        }
+        return $endpoint;
     }
 
     public function getRedirectMethod()
