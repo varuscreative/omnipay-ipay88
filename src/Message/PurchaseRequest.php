@@ -13,7 +13,7 @@ class PurchaseRequest extends AbstractRequest
             'MerchantCode' => $this->getMerchantCode(),
             'PaymentId' => '',
             'RefNo' => $this->getTransactionId(),
-            'Amount' => number_format($this->getAmount(), 2),
+            'Amount' => $this->getAmount(),
             'Currency' => $this->getCurrency(),
             'ProdDesc' => $this->getDescription(),
             'UserName' => $this->getCard()->getBillingName(),
