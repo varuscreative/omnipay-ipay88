@@ -13,12 +13,12 @@ class PurchaseRequest extends AbstractRequest
             'MerchantCode' => $this->getMerchantCode(),
             'PaymentId' => '',
             'RefNo' => $this->getTransactionId(),
-            'Amount' => number_format($this->getAmount(), 2),
+            'Amount' => $this->getAmount(),
             'Currency' => $this->getCurrency(),
             'ProdDesc' => $this->getDescription(),
             'UserName' => $this->getCard()->getBillingName(),
             'UserEmail' => $this->getCard()->getEmail(),
-            'UserContact' => $this->getCard()->getNumber(),
+            'UserContact' => $this->getCard()->getBillingPhone(),
             'Remark' => '',
             'Lang' => '',
             'Signature' => $this->signature(
@@ -30,6 +30,7 @@ class PurchaseRequest extends AbstractRequest
             ),
             'ResponseURL' => $this->getReturnUrl(),
             'BackendURL' => $this->getBackendUrl(),
+            'testMode' => $this->getTestMode(),
         ];
     }
 

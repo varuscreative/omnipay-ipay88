@@ -15,6 +15,16 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('backendUrl', $backendUrl);
     }
 
+    public function getReturnUrl()
+    {
+        return $this->getParameter('returnUrl');
+    }
+
+    public function setReturnUrl($returnUrl)
+    {
+        return $this->setParameter('returnUrl', $returnUrl);
+    }
+
     public function getMerchantKey()
     {
         return $this->getParameter('merchantKey');
