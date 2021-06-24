@@ -17,7 +17,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "varuscreative/omnipay-ipay88": "~2.0"
+        "varuscreative/omnipay-ipay88": "~1.0"
     }
 }
 ```
